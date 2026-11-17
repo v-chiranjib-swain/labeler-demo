@@ -1,25 +1,18 @@
-name: PR Labeler
+name: Reproduce manual labeling
 
 on:
   pull_request_target:
     types: [opened, synchronize]
   workflow_dispatch:  # This enables manual triggering from the Actions tab
 
+
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   label:
-    name: Add PR labels
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      issues: write
-      contents: read
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v4
-      - uses: chiranjib-swain/labeler@chore/bump-octokit-core-v7
-        with:
-          sync-labels: true
-        # env:
-        #   LABELER_DEBUG_DELAY_BEFORE_FETCH_MS: 20000
-        #   LABELER_DEBUG_DELAY_BEFORE_SET_MS: 25000
-        #   LABELER_DEBUG_DELAY_AFTER_SET_MS: 0
+      - uses: actions/labeler@v6
+      
