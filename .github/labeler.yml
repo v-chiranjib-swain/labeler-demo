@@ -1,16 +1,9 @@
-# Excerpted from issue #918
+feature:
+  - head-branch: '^feature/'
 
-Login:
-  - changed-files:
-      - any-glob-to-any-file:
-          - 'src/addons/project/lib/Login.php'
+main-target:
+  - base-branch: '^main$'
 
-User:
+docs:
   - changed-files:
-      - any-glob-to-any-file:
-          - 'src/addons/project/lib/User.php'
-
-Contact:
-  - changed-files:
-      - any-glob-to-any-file:
-          - 'src/addons/project/lib/Contact.php'
+      - any-glob-to-any-file: 'docs/**'
