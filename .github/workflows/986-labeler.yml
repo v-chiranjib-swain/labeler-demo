@@ -1,4 +1,4 @@
-name: Reproduce manual labeling
+name: CLICK manual labeling
 
 on:
   workflow_dispatch:
@@ -16,6 +16,6 @@ jobs:
   label:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v6
+      - uses: chiranjib-swain/labeler@fix/986-dispatch-branch-matching
         with:
           pr-number: ${{ inputs.pr_number }}
