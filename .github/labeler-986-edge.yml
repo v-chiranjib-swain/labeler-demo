@@ -1,0 +1,14 @@
+repro-986-feature:
+  - head-branch: '^feature/'
+
+repro-986-main:
+  - base-branch: '^main$'
+
+repro-986-feature-to-main:
+  - all:
+      - head-branch: '^feature/'
+      - base-branch: '^main$'
+
+repro-986-docs:
+  - changed-files:
+      - any-glob-to-any-file: 'docs/**'
