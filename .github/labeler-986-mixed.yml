@@ -1,6 +1,0 @@
-mixed-986:
-  - all:
-      - head-branch: '^feature/'
-      - base-branch: '^main$'
-      - changed-files:
-          - any-glob-to-any-file: 'docs/**'
